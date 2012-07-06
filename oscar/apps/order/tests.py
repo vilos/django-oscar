@@ -164,7 +164,7 @@ class LineTests(TestCase):
         self.assertEqual(1, history['Dispatched']['quantity'])
 
     def test_shipping_status_is_empty_to_start_with(self):
-        self.assertEquals('', self.line.shipping_status)
+        self.assertEquals('Pending', self.line.shipping_status)
         
     def test_shipping_status_after_full_line_event(self):
         self.event(self.order_placed)
