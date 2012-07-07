@@ -8,7 +8,7 @@ class DefaultWrapper(object):
     """
     Default stockrecord wrapper
     """
-    
+
     def is_available_to_buy(self, stockrecord):
         """
         Test whether a product is available to buy.
@@ -53,23 +53,23 @@ class DefaultWrapper(object):
         if self.is_available_to_buy(stockrecord):
             return 'available'
         return 'outofstock'
-    
+
     def availability(self, stockrecord):
         if stockrecord.net_stock_level > 0:
-            return _("In stock (%d available)") % stockrecord.net_stock_level
+            return _("In stock")
         if self.is_available_to_buy(stockrecord):
             return _('Available')
         return _("Not available")
-    
+
     def dispatch_date(self, stockrecord):
         if stockrecord.net_stock_level:
             # Assume next day for in-stock items
             return datetime.date.today() + datetime.timedelta(days=1)
         # Assume one week for out-of-stock items
         return datetime.date.today() + datetime.timedelta(days=7)
-    
+
     def lead_time(self, stockrecord):
         return 1
-    
+
     def calculate_tax(self, stockrecord):
         return D('0.00')
