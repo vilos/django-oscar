@@ -2668,11 +2668,11 @@ msgstr "Pokračovat"
 #: templates/basket/basket.html:188
 #: templates/basket/partials/basket_quick.html:24
 msgid "Your basket is empty, you should probably add some items to buy."
-msgstr ""
+msgstr "Košík je prázdný."
 
 #: templates/basket/basket.html:189 templates/checkout/thank_you.html:116
 msgid "Continue shopping"
-msgstr ""
+msgstr "Pokračovat v nákupu"
 
 #: templates/basket/basket.html:196
 msgid "To buy later"
